@@ -1,0 +1,196 @@
+/* card row */
+.notif-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.06);
+  border-left: 4px solid transparent;
+}
+
+/* unread vs read */
+.notif-row.unread {
+  background: #f4f9ff;
+  border-left-color: #2f8fff;
+}
+
+.notif-row.read {
+  background: #ffffff;
+  border-left-color: #e6e6e6;
+}
+
+/* left section: avatar + main text */
+.notif-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0; /* allow truncation */
+}
+
+.notif-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+}
+
+.notif-main {
+  min-width: 0;
+}
+
+.notif-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.notif-title {
+  font-weight: 600;
+  font-size: 14px;
+  color: #222;
+}
+
+.notif-time {
+  font-size: 13px;
+  color: #717171;
+  margin-left: 8px;
+}
+
+/* message (smaller) */
+.notif-message {
+  font-size: 13px;
+  color: #4f4f4f;
+  margin-top: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 420px;
+}
+
+/* right column with time and dot */
+.notif-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: 12px;
+  min-width: 90px;
+  justify-content: flex-end;
+}
+
+.notif-relative {
+  font-size: 13px;
+  color: #d24a4a;
+}
+
+.notif-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* dot colors */
+.dot-unread {
+  background: #1784ff;
+}
+
+.dot-read {
+  background: #cfcfcf;
+}
+/* ... Keep existing styles ... */
+
+.notif-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 4px;
+  min-width: 80px; /* Slightly wider to fit actions */
+}
+
+/* New container for Dot + Trash icon */
+/* ... Keep existing styles ... */
+
+.notif-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.action-icon {
+  font-size: 14px;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+  color: #94a3b8; /* Default gray */
+}
+
+.action-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Star Specific Styles */
+.star-icon {
+  font-size: 15px; /* Slightly larger */
+}
+
+/* If the parent component renders a filled star, we can target it specifically 
+   or rely on inline React logic. But let's add a helper class for active star if needed. */
+.star-icon svg[fill="currentColor"] { 
+    /* This targets filled icons if you use simple SVG, 
+       but for React Icons, color is controlled via parent color */
+}
+
+/* When the star is active (Gold) */
+.star-active {
+  color: #fbbf24;
+}
+
+/* Delete Icon Hover */
+.delete-icon:hover {
+  color: #ef4444;
+}
+
+/* You might need to add this logical styling in JS or use a class toggle. 
+   See the JS update above where we swap FaStar vs FaRegStar. 
+   We can style FaStar directly: */
+.star-icon .star-filled {
+    color: #f59e0b; /* Gold color */
+}
+
+.delete-icon {
+  color: #94a3b8;
+  font-size: 14px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.delete-icon:hover {
+  color: #ef4444; /* Red on hover */
+}
+
+/* ... Keep other existing styles ... */
+
+.notif-time-right {
+  font-size: 13px;
+  color: #555;
+  font-weight: 500;
+}
+
+.notif-relative {
+  font-size: 13px;
+  color: #d24a4a;
+}
+
+.notif-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+

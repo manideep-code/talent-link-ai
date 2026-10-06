@@ -1,0 +1,18 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+env/
+
+# Django stuff
+*.log
+
+# VS Code
+.vscode/
+
+**/migrations/
+

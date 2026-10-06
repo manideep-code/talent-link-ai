@@ -1,0 +1,1369 @@
+%============================================================
+%  TalentLink – A Professional Freelancer Platform
+%  Industrial Oriented Mini Project Report
+%  JYOTHISHMATHI INSTITUTE OF TECHNOLOGY AND SCIENCE
+%  Department of CSE | 2025-2026
+%  Formatted as per JITS Mini-Project Guidelines
+%============================================================
+
+\documentclass[12pt,a4paper,oneside]{report}
+
+%------------------------------------------------------------
+% PACKAGES
+%------------------------------------------------------------
+\usepackage[left=1.5in, right=1.0in, top=1.0in, bottom=1.0in]{geometry}
+\usepackage{times}           % Times New Roman font
+\usepackage{fontenc}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{setspace}        % Line spacing
+\usepackage{titlesec}        % Custom section/chapter titles
+\usepackage{tocloft}         % TOC / LOF / LOT customisation
+\usepackage{fancyhdr}        % Header / footer control
+\usepackage{graphicx}        % Include images
+\usepackage{float}           % Force figure placement
+\usepackage{caption}         % Caption formatting
+\usepackage{tabularx}        % Tables
+\usepackage{booktabs}        % Professional table lines
+\usepackage{array}           % Extended column definitions
+\usepackage{enumitem}        % List customisation
+\usepackage{hyperref}        % Clickable links and TOC
+\usepackage{parskip}         % Space between paragraphs
+\usepackage{indentfirst}     % Indent first paragraph of each section
+\usepackage{microtype}       % Better text justification
+\usepackage{url}             % URL formatting
+\usepackage{longtable}       % Multi-page tables
+\usepackage{amsmath}         % Math support
+\usepackage{xcolor}          % Color support
+\usepackage{emptypage}       % Suppress headers/footers on empty pages
+\usepackage{afterpage}       % Insert commands after current page
+
+%------------------------------------------------------------
+% HYPERREF SETUP
+%------------------------------------------------------------
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black,
+    pdfborder={0 0 0}
+}
+
+%------------------------------------------------------------
+% FONT SIZE DEFINITIONS (per JITS guideline)
+%  Chapter names  : 16pt Bold ALL CAPS
+%  Main headings  : 14pt Bold ALL CAPS
+%  Subheadings    : 14pt Bold Title Case
+%  Sub-subheadings: 12pt Bold Title Case
+%  Body text      : 12pt
+%  Fig/Table cap  : 10pt Italic Title Case
+%------------------------------------------------------------
+
+%------------------------------------------------------------
+% CHAPTER TITLE FORMAT  (16pt TNR Bold, centred)
+%------------------------------------------------------------
+\titleformat{\chapter}[block]
+  {\centering\fontsize{16}{20}\selectfont\bfseries}  % format
+  {Chapter~\thechapter}                               % label
+  {0pt}                                               % sep
+  {\vspace{6pt}\centering\MakeUppercase}              % before-code
+  []                                                  % after-code
+
+\titlespacing*{\chapter}{0pt}{0pt}{2\baselineskip}
+
+%------------------------------------------------------------
+% SECTION FORMAT  (14pt TNR Bold ALL CAPS)
+%------------------------------------------------------------
+\titleformat{\section}
+  {\fontsize{14}{18}\selectfont\bfseries\MakeUppercase}
+  {\thesection}{1em}{}
+
+\titlespacing*{\section}{0pt}{1.5\baselineskip}{0.5\baselineskip}
+
+%------------------------------------------------------------
+% SUBSECTION FORMAT  (14pt TNR Bold Title Case)
+%------------------------------------------------------------
+\titleformat{\subsection}
+  {\fontsize{14}{18}\selectfont\bfseries}
+  {\thesubsection}{1em}{}
+
+\titlespacing*{\subsection}{0pt}{1.2\baselineskip}{0.4\baselineskip}
+
+%------------------------------------------------------------
+% SUBSUBSECTION FORMAT  (12pt TNR Bold Title Case)
+%------------------------------------------------------------
+\titleformat{\subsubsection}
+  {\fontsize{12}{16}\selectfont\bfseries}
+  {\thesubsubsection}{1em}{}
+
+\titlespacing*{\subsubsection}{0pt}{1\baselineskip}{0.3\baselineskip}
+
+%------------------------------------------------------------
+% CAPTION FORMAT  (10pt Italic Title Case)
+%------------------------------------------------------------
+\captionsetup{
+    font={small,it},
+    labelfont={small,it},
+    justification=centering,
+    skip=6pt
+}
+
+%------------------------------------------------------------
+% PARAGRAPH SETTINGS
+%------------------------------------------------------------
+\setlength{\parindent}{1em}    % Single tab indent for new paragraphs
+\setlength{\parskip}{6pt}       % Space between paragraphs
+
+%------------------------------------------------------------
+% SPACING
+%------------------------------------------------------------
+\onehalfspacing          % 1.5 line spacing for body text
+
+%------------------------------------------------------------
+% TOC / LOF / LOT FORMATTING
+%------------------------------------------------------------
+\renewcommand{\contentsname}{\centering\fontsize{16}{20}\selectfont\bfseries TABLE OF CONTENTS}
+\renewcommand{\listfigurename}{\centering\fontsize{16}{20}\selectfont\bfseries LIST OF FIGURES}
+\renewcommand{\listtablename}{\centering\fontsize{16}{20}\selectfont\bfseries LIST OF TABLES}
+
+%------------------------------------------------------------
+% FIGURE NUMBERING: Chapter.Figure  e.g. Fig 5.1
+%------------------------------------------------------------
+\numberwithin{figure}{chapter}
+\numberwithin{table}{chapter}
+
+%------------------------------------------------------------
+% PAGE STYLE
+%------------------------------------------------------------
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+
+%============================================================
+\begin{document}
+%============================================================
+
+%------------------------------------------------------------
+%  FRONT MATTER  (Roman numerals, no page number on
+%  Title / Certificate / Acknowledgement pages)
+%------------------------------------------------------------
+\pagenumbering{roman}
+\setcounter{page}{1}
+
+%============================================================
+%  TITLE PAGE
+%============================================================
+\thispagestyle{empty}
+\begin{titlepage}
+  \centering
+  \vspace*{0.3cm}
+
+  % College Logo placeholder (replace with actual logo file)
+  % \includegraphics[width=3cm]{logo.png}\\[0.3cm]
+
+  {\fontsize{16}{20}\selectfont\bfseries
+    JYOTHISHMATHI INSTITUTE OF TECHNOLOGY AND SCIENCE}\\[0.1cm]
+  {\fontsize{12}{16}\selectfont
+    (Autonomous, NBA (CSE, ECE, EEE) and NAAC `A' Grade)\\
+    (Approved by AICTE, New Delhi, Affiliated to JNTUH, Hyderabad)\\
+    Nustulapur, Karimnagar -- 505481, Telangana, India}\\[0.5cm]
+
+  {\fontsize{14}{18}\selectfont\bfseries
+    DEPARTMENT OF COMPUTER SCIENCE AND ENGINEERING}\\[0.8cm]
+
+  \hrule height 1.5pt
+  \vspace{0.3cm}
+  {\fontsize{14}{18}\selectfont\bfseries\itshape
+    Industrial Oriented Mini Project Report}\\[0.1cm]
+  {\fontsize{14}{18}\selectfont on}\\[0.3cm]
+  {\fontsize{16}{20}\selectfont\bfseries
+    TALENT LINK -- A PROFESSIONAL FREELANCER PLATFORM}\\[0.3cm]
+  \hrule height 1.5pt
+  \vspace{0.6cm}
+
+  {\fontsize{12}{16}\selectfont
+    Submitted to\\[0.2cm]
+    {\bfseries Jawaharlal Nehru Technological University, Hyderabad}\\[0.2cm]
+    For the partial fulfilment of requirements for the award of the degree in\\[0.2cm]
+    {\bfseries BACHELOR OF TECHNOLOGY}\\[0.1cm]
+    in\\[0.1cm]
+    {\bfseries COMPUTER SCIENCE AND ENGINEERING}}\\[0.8cm]
+
+  \begin{minipage}[t]{0.45\textwidth}
+    \centering
+    {\fontsize{12}{16}\selectfont\bfseries Submitted by}\\[0.4cm]
+    {\fontsize{12}{16}\selectfont
+      ADI ROSHINI \hfill (23271A05D9)\\[0.2cm]
+      VATARIKARI MANISHA \hfill (23271A05C8)\\[0.2cm]
+      ARMOOR AKHILA \hfill (23271A05B9)\\[0.2cm]
+      ARANDKAR VAESHNAVI \hfill (23271A05G3)}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.45\textwidth}
+    \centering
+    {\fontsize{12}{16}\selectfont\bfseries Under the Esteemed Guidance of}\\[0.4cm]
+    {\fontsize{12}{16}\selectfont
+      \textbf{DR. M. RAVINDAR}\\
+      Associate Professor\\
+      Dept. of CSE}
+  \end{minipage}
+
+  \vfill
+  {\fontsize{12}{16}\selectfont\bfseries 2025--2026}
+\end{titlepage}
+
+%============================================================
+%  CERTIFICATE
+%============================================================
+\thispagestyle{empty}
+\newpage
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries CERTIFICATE}
+\end{center}
+\vspace{2\baselineskip}
+
+\begin{doublespace}
+{\fontsize{12}{16}\selectfont
+This is to certify that the Industrial Oriented Mini Project Report entitled
+\textbf{``Talent Link -- A Professional Freelancer Platform''} is being submitted by
+\textbf{ADI ROSHINI} (23271A05D9), \textbf{VATARIKARI MANISHA} (23271A05C8),
+\textbf{ARMOOR AKHILA} (23271A05B9), \textbf{ARANDKAR VAESHNAVI} (23271A05G3),
+in partial fulfilment of the requirements for the award of the Degree of
+\textbf{Bachelor of Technology} in \textbf{Computer Science \& Engineering} to the
+Jyothishmathi Institute of Technology \& Science, Karimnagar, during academic year
+\textbf{2025--2026}, is a bonafide work carried out by them under my guidance and
+supervision. The results presented in this Project Work have been verified and are
+found to be satisfactory. The results embodied in this Project Work have not been
+submitted to any other University for the award of any other degree or diploma.
+}
+\end{doublespace}
+
+\vspace{3cm}
+
+\noindent
+\begin{tabular}{p{0.45\textwidth} p{0.1\textwidth} p{0.45\textwidth}}
+  \textbf{Project Guide} & & \textbf{Head of the Department} \\[1.5cm]
+  \textbf{K. Sai Veena} & & \textbf{Dr. M. Ravindar} \\
+  Associate Professor   & & Associate Professor \\
+  Dept. of CSE, JITS    & & Dept. of CSE, JITS \\
+\end{tabular}
+
+\vspace{2cm}
+\begin{center}
+  \textbf{EXTERNAL EXAMINER}
+\end{center}
+
+%============================================================
+%  DECLARATION
+%============================================================
+\thispagestyle{empty}
+\newpage
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries DECLARATION}
+\end{center}
+\vspace{2\baselineskip}
+
+{\fontsize{12}{16}\selectfont
+\onehalfspacing
+We hereby declare that the work which is being presented in this dissertation entitled,
+\textbf{``TALENT LINK: A PROFESSIONAL FREELANCE PLATFORM''}, submitted towards the
+partial fulfilment of the requirements for the award of the degree of Bachelor of
+Technology in Computer Science \& Engineering, Jyothishmathi Institute of Technology
+\& Science, Karimnagar is an authentic record of our own work carried out under the
+supervision of \textbf{K. Sai Veena}, Associate Professor, Department of CSE,
+Jyothishmathi Institute of Technology and Science, Karimnagar.
+
+To the best of our knowledge and belief, this project bears no resemblance with any
+report submitted to JNTUH or any other University for the award of any degree or
+diploma.
+}
+
+\vspace{3cm}
+\noindent
+\begin{tabular}{p{0.45\textwidth} p{0.1\textwidth} p{0.45\textwidth}}
+  ADI ROSHINI (23271A05D9) & & \\[0.8cm]
+  VATARIKARI MANISHA (23271A05C8) & & \\[0.8cm]
+  ARMOOR AKHILA (23271A05B9) & & \\[0.8cm]
+  ARANDKAR VAESHNAVI (23271A05G3) & & \\
+\end{tabular}
+
+\vspace{1.5cm}
+\noindent Date: \hrulefill\\[0.5cm]
+\noindent Place: Karimnagar
+
+%============================================================
+%  ACKNOWLEDGEMENT  (no page number)
+%============================================================
+\thispagestyle{empty}
+\newpage
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries ACKNOWLEDGEMENT}
+\end{center}
+\vspace{2\baselineskip}
+\onehalfspacing
+
+{\fontsize{12}{16}\selectfont
+\indent We would like to express our sincere gratitude to our advisor,
+\textbf{Dr. M. RAVINDAR}, whose knowledge and guidance has motivated us to achieve
+goals we never thought possible. The time we have spent working under his supervision
+has truly been a pleasure.
+
+\indent The experience from this kind of work is great and will be useful to us in the
+future. We thank \textbf{Dr. M. RAVINDAR}, Associate Professor \& HOD, CSE Dept.,
+for his effort, kind cooperation, guidance, and for encouraging us to do this work and
+also for providing the facilities to carry out this work.
+
+\indent It is a great pleasure to convey our thanks to \textbf{Dr. T. ANIL KUMAR},
+Principal, Jyothishmathi Institute of Technology \& Science, and the College Management
+for permitting us to undertake this project and providing excellent facilities to carry
+out our project work.
+
+\indent We thank all the Faculty members of the Department of Computer Science \&
+Engineering for sharing their valuable knowledge with us. We extend our thanks to the
+Technical Staff of the department for their valuable suggestions to technical problems.
+Finally, special thanks to our parents for their support and encouragement throughout
+our life and this course. Thanks to all our friends and well-wishers for their constant
+support.
+}
+
+%============================================================
+%  ABSTRACT  (page number starts here: i)
+%============================================================
+\newpage
+\setcounter{page}{1}
+\thispagestyle{plain}
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries ABSTRACT}
+\end{center}
+\vspace{2\baselineskip}
+\addcontentsline{toc}{chapter}{Abstract}
+
+{\fontsize{12}{16}\selectfont\onehalfspacing
+\indent TalentLink connects freelancers and clients through a clear and organized system.
+As remote work and the digital economy grow, there is a greater need for a reliable
+platform. TalentLink is a freelance matchmaking platform that makes hiring and
+collaboration easier. Current systems often struggle with disorganized workflows, gaps
+in communication, and challenges in managing proposals and project progress. TalentLink
+offers a dependable space where clients can post project needs, and freelancers can find
+opportunities and submit proposals that match their skills.
+
+\indent The platform promotes organized project management, clear communication, and
+structured teamwork throughout the project. By streamlining workflows and improving user
+communication, TalentLink makes managing freelance projects simpler. The main goal of the
+system is to make the hiring process easier, improve transparency, and create a
+professional environment for freelance collaboration. TalentLink seeks to boost
+efficiency, support effective teamwork, and deliver a scalable solution.
+
+\indent The rapid growth of digital technology and the rise of remote work have changed
+how organizations and individuals work together. Freelancing platforms connect skilled
+professionals with clients needing specific services for project-based work. However,
+many existing freelance platforms struggle with issues like unstructured workflows, poor
+project management, communication gaps, and challenges in finding reliable professionals.
+These issues create difficulties for freelancers looking for real opportunities and for
+clients seeking skilled individuals to complete projects effectively.
+
+\indent TalentLink offers a structured workflow that supports proposal submission,
+communication, project tracking, and collaboration throughout the project's lifecycle.
+It helps freelancers highlight their skills and experience while enabling clients to
+review proposals and pick the best candidates for their projects. By improving
+communication and lowering workflow complexity, the system ensures smoother collaboration
+and better project results.
+}
+
+%============================================================
+%  TABLE OF CONTENTS
+%============================================================
+\newpage
+\thispagestyle{plain}
+{\setlength{\parskip}{0pt}
+\tableofcontents}
+
+%============================================================
+%  LIST OF FIGURES
+%============================================================
+\newpage
+\thispagestyle{plain}
+{\setlength{\parskip}{0pt}
+\listoffigures}
+\addcontentsline{toc}{chapter}{List of Figures}
+
+%============================================================
+%  LIST OF TABLES
+%============================================================
+\newpage
+\thispagestyle{plain}
+{\setlength{\parskip}{0pt}
+\listoftables}
+\addcontentsline{toc}{chapter}{List of Tables}
+
+%============================================================
+%  LIST OF ABBREVIATIONS
+%============================================================
+\newpage
+\thispagestyle{plain}
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries LIST OF ABBREVIATIONS}
+\end{center}
+\addcontentsline{toc}{chapter}{List of Abbreviations}
+\vspace{2\baselineskip}
+
+\begin{tabular}{p{0.2\textwidth} p{0.7\textwidth}}
+  \textbf{Abbreviation} & \textbf{Full Form} \\[0.5cm]
+  API      & Application Programming Interface \\
+  AICTE    & All India Council for Technical Education \\
+  CSE      & Computer Science and Engineering \\
+  DFD      & Data Flow Diagram \\
+  DRF      & Django REST Framework \\
+  HOD      & Head of the Department \\
+  HTML     & HyperText Markup Language \\
+  HTTP     & HyperText Transfer Protocol \\
+  IDE      & Integrated Development Environment \\
+  JITS     & Jyothishmathi Institute of Technology and Science \\
+  JNTUH    & Jawaharlal Nehru Technological University, Hyderabad \\
+  MVP      & Minimum Viable Product \\
+  NAAC     & National Assessment and Accreditation Council \\
+  NBA      & National Board of Accreditation \\
+  OTP      & One Time Password \\
+  RAM      & Random Access Memory \\
+  REST     & Representational State Transfer \\
+  UI       & User Interface \\
+  UML      & Unified Modelling Language \\
+  URL      & Uniform Resource Locator \\
+  VS Code  & Visual Studio Code \\
+\end{tabular}
+
+%============================================================
+%  MAIN MATTER  (Arabic page numbering from 1)
+%============================================================
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
+
+%============================================================
+%  CHAPTER 1 – INTRODUCTION
+%============================================================
+\chapter{INTRODUCTION}
+
+\section{PROJECT OVERVIEW}
+
+Freelancing has become a key part of the modern digital economy. It allows individuals
+to work independently and offer services to clients from various locations. Many
+organizations and businesses prefer hiring freelancers for short-term projects because of
+the flexibility and access to specific skills this approach offers. However, finding
+trustworthy freelancers and managing freelance projects can be tough for both clients and
+freelancers. TalentLink is a professional freelance matchmaking platform designed to
+connect freelancers and clients through a clear and organized system.
+
+\indent The platform lets clients post project needs and allows freelancers to browse
+available opportunities and submit proposals that match their skills. It also supports
+project management, communication, and teamwork throughout the project. The main goal of
+TalentLink is to make the freelance hiring process easier and improve collaboration
+between freelancers and clients. By offering a centralized platform, the system ensures
+transparency, an organized workflow, and effective management of freelance projects.
+
+\indent To address the challenges faced in connecting talented individuals with suitable
+opportunities, this project proposes TalentLink, an intelligent web-based platform
+designed to bridge the gap between skilled individuals and organizations seeking talent.
+The system aims to create a centralized and efficient environment where users can
+showcase their abilities, portfolios, and achievements while enabling recruiters to
+easily discover and connect with potential candidates. By integrating modern web
+technologies and intelligent recommendation mechanisms, the platform ensures a smooth
+and transparent talent discovery process.
+
+\section{PROJECT PURPOSE}
+
+The purpose of the TalentLink project is to create a professional platform that connects
+freelancers and clients in a clear and effective environment. With the rise of the digital
+economy and the remote work culture, freelancing has become a popular way for
+organizations to complete projects using skilled professionals from various locations.
+However, many freelancers struggle to find reliable project opportunities, while clients
+often find it hard to identify the right talent for their needs. TalentLink seeks to solve
+these problems by offering a centralized system that streamlines freelance hiring and
+project management. The platform allows for smooth interaction between freelancers and
+clients while promoting transparency and an organized workflow.
+
+\indent TalentLink is created to simplify the entire freelance hiring lifecycle---from
+project posting to proposal submission, selection, execution, and completion. The system
+provides a streamlined approach where clients can clearly define their project
+requirements, budgets, and timelines, while freelancers can showcase their skills,
+experience, and previous work. By implementing a well-organized proposal management
+system, the platform ensures that clients can easily compare submissions and select the
+most suitable candidate based on expertise and credibility.
+
+\indent TalentLink focuses on building a trustworthy and transparent freelance
+environment. By maintaining professional profiles, organized records of transactions, and
+secure interactions, the platform encourages accountability and long-term collaboration.
+The system is designed not only to connect people but also to create a sustainable
+freelance ecosystem where quality work, timely delivery, and client satisfaction are
+prioritized. The platform aims to promote digital employment, support remote work
+culture, and contribute to the growth of the freelance economy by offering a reliable,
+scalable, and user-friendly solution.
+
+\section{PROJECT SCOPE}
+
+The TalentLink project aims to create a professional freelance matchmaking platform that
+connects freelancers and clients in an efficient way. The platform simplifies finding
+freelance opportunities and managing project collaborations. It offers a central system
+where clients can post projects, and freelancers can browse available work and submit
+proposals. TalentLink seeks to improve the freelance workflow by providing clear
+communication, project tracking, and collaboration tools.
+
+\indent The scope of the TalentLink project focuses on developing a professional
+freelance matchmaking platform that connects freelancers and clients in an organized and
+efficient environment. The key scope areas include:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Project Posting and Proposal Management:} Clients can post their project
+        needs, and freelancers can review the details and submit proposals based on their
+        skills.
+  \item \textbf{Freelancer and Client Interaction:} The platform allows freelancers and
+        clients to communicate, making it easier to discuss project requirements and work
+        together.
+  \item \textbf{Project Tracking and Management:} TalentLink organizes project workflows
+        so users can monitor progress from the proposal stage to completion.
+  \item \textbf{User Profile Management:} Freelancers can highlight their skills and
+        experience in their profiles, helping clients find the right candidates.
+  \item \textbf{Scalability and Future Expansion:} The platform can grow to add features
+        like smart job matching, better collaboration tools, and support for more users.
+  \item \textbf{Secure User Authentication:} The system provides secure login and access
+        control to ensure only authorized users access the platform.
+  \item \textbf{Review and Feedback System:} Clients can provide ratings and feedback to
+        freelancers after project completion, helping maintain trust and transparency.
+  \item \textbf{Efficient Collaboration Environment:} The platform provides an organized
+        environment that supports smooth communication and collaboration.
+\end{itemize}
+
+\section{PROJECT FEATURES}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{User Authentication \& Security:} TalentLink allows freelancers and
+        clients to sign up for an account; once registered, users can log in with secure
+        credentials. Only registered users can access the system.
+  \item \textbf{Project Posting:} Clients may post project details (length of project,
+        skill set, etc.) so freelancers can review and identify potential projects.
+  \item \textbf{Proposal Submission:} Freelancers can review posted projects and submit
+        proposals according to their skills, experience, and the type of work needed.
+  \item \textbf{Communication:} The platform provides a means for freelancers and clients
+        to communicate regarding project collaboration.
+  \item \textbf{Project Management:} The platform provides users with a streamlined method
+        for managing a project by tracking from proposal submission to completion.
+  \item \textbf{Review and Feedback:} After a project is completed, clients can provide
+        feedback and rate the freelancer's work, creating an environment of openness and
+        trust.
+  \item \textbf{User Profiles:} Freelancers can create a profile that lists their
+        experience, skill set, and previous projects, helping clients find the right
+        freelancer for the job.
+\end{itemize}
+
+%============================================================
+%  CHAPTER 2 – LITERATURE REVIEW
+%============================================================
+\chapter{LITERATURE REVIEW}
+
+The rapid rise in digital technology and remote work has led to an increase in demand for
+online freelancing platforms. These platforms link clients that have a requirement for a
+precise task or service with independent contractors who possess the skills needed to meet
+those requirements. The way that freelancing systems work gives independent contractors
+the ability to work as independent professionals. In addition, organizations benefit from
+being able to access all of the global talent available through freelance systems.
+However, having effective management of freelance workers and successful collaborations
+between organizations and independent contractors requires an effective structure for how
+projects are established, a way to have transparent communication among all parties, and a
+reliable project management process.
+
+\indent Numerous research documents exist regarding the development of online marketplace
+platforms for service-based services between independent contractors and their clients.
+These platforms are expected to provide users with features such as registration, project
+posting, submitting proposals, and communication during execution. Developing and managing
+the overall structure of the workflow in conjunction with secured communication between
+independent contractors and their clients is critical to improving collaboration levels
+and successfully completing the project.
+
+\section{RELATED WORKS}
+
+\subsection{Title 1: The Freelancer Application: A Gateway to Job-Seeking Opportunities for Students}
+
+\noindent\textbf{Author:} Lily Puspa Dewi, Michael Wong, and Henry Novianus Palit\\
+\textbf{Year:} 2022
+
+The purpose of the study is to explore an E-commerce application designed to create a
+marketplace for freelance jobs for college students. This platform serves as a place where
+users are able to create an account and search for and apply to freelance positions they
+believe their skills will be able to fulfil. Key components of this research include:
+developing an application that allows users to use secure registration methods;
+opportunities to develop a user workflow for finding quality applicants efficiently; and
+creating an efficient method for communicating and completing transactions in a timely
+manner, while improving client-to-freelancer collaboration and making the job search
+experience easier.
+
+\subsection{Title 2: Design of Online Service Marketplace Platforms}
+
+\noindent\textbf{Author:} Geoffrey G. Parker, Marshall Van Alstyne, and Vili Lehdonvirta\\
+\textbf{Year:} 2021
+
+Research provides a framework for developing an online marketplace for services through
+which businesses and customers can connect. Emphasising the need to establish structured
+project management methodologies and be able to effectively evaluate proposals submitted
+on the marketplace, allows users to identify the best candidates based on their areas of
+expertise. Through this research project, centralised platforms improve the communication
+and project management on the client side by improving the efficiency of finding an
+approved method for completing the desired task.
+
+\subsection{Title 3: Digital Freelance Marketplaces and Remote Work Platforms}
+
+\noindent\textbf{Author:} Vili Lehdonvirta, John Horton, and Arun Sundararajan\\
+\textbf{Year:} 2020
+
+The research looks into how digital freelancing marketplaces are growing and how they are
+affecting global labour markets. The research explains that businesses can get access to
+specialised skills via freelancing platforms and people gain the benefits of flexible
+work. The research also highlights the need for transparency, trust, and structured
+collaboration tools for successful freelance project management. From the analysis of
+these research studies, TalentLink has been built as a professional matchmaking platform
+for freelancers, providing a structured workflow, organised communication, and efficient
+project management.
+
+%============================================================
+%  CHAPTER 3 – EXISTING AND PROPOSED SYSTEM
+%============================================================
+\chapter{EXISTING AND PROPOSED SYSTEM}
+
+\section{EXISTING SYSTEM}
+
+The existing freelancing systems provide platforms where clients can post projects, and
+freelancers can search for job opportunities. These platforms allow freelancers to apply
+for projects based on their skills and experience. However, many existing systems still
+face challenges in managing freelance collaborations efficiently. In several cases, the
+workflow between freelancers and clients is not well organized, which may lead to
+confusion and delays in project completion.
+
+\subsection{Existing System Disadvantages}
+
+\begin{itemize}[leftmargin=2em]
+  \item Lack of structured workflow for managing freelance projects.
+  \item Difficulty in identifying reliable freelancers for specific project requirements.
+  \item Communication gaps between freelancers and clients.
+  \item Inefficient project tracking and management.
+  \item Time-consuming hiring process.
+\end{itemize}
+
+\section{PROBLEM STATEMENT}
+
+In the current freelance ecosystem, clients often face difficulties in finding skilled and
+reliable freelancers who can meet their project requirements within the specified time.
+Similarly, freelancers may struggle to discover genuine and suitable project opportunities
+that match their skills and expertise. Many existing freelance systems do not provide a
+structured workflow for managing freelance collaborations, which may lead to communication
+gaps, delays in project completion, and inefficiencies in project management.
+
+\indent Additionally, the lack of a centralized platform for handling project proposals,
+monitoring project progress, and maintaining clear communication between users makes the
+freelance hiring process more complicated and time-consuming.
+
+\indent Therefore, there is a need to develop a professional freelance matchmaking
+platform that simplifies the hiring process and improves collaboration between freelancers
+and clients. The system should:
+
+\begin{itemize}[leftmargin=2em]
+  \item Provide a centralized platform where clients can post project requirements.
+  \item Allow freelancers to browse available projects and submit proposals based on their
+        skills.
+  \item Enable effective communication between freelancers and clients.
+  \item Support organized project tracking and management.
+  \item Improve transparency and efficiency in freelance collaboration.
+\end{itemize}
+
+\section{PROPOSED SYSTEM}
+
+The limitations of existing freelance systems highlight the need for a more efficient
+platform for managing freelance collaborations. TalentLink is proposed as a professional
+freelance matchmaking platform that provides a structured environment for connecting
+freelancers and clients. The system allows clients to post project requirements and
+enables freelancers to browse available opportunities and submit proposals based on their
+skills and experience.
+
+\indent The platform ensures organized communication and collaboration between freelancers
+and clients throughout the project lifecycle. By providing a centralized system for
+project posting, proposal submission, and project tracking, TalentLink simplifies the
+freelance hiring process and improves transparency. The system helps clients identify
+suitable freelancers efficiently while enabling freelancers to access genuine project
+opportunities.
+
+\indent TalentLink also supports structured project management, allowing users to monitor
+project progress and maintain clear communication. By improving workflow organization and
+collaboration, the platform aims to create a reliable and professional environment for
+freelance project management.
+
+\subsection{Proposed System Advantages}
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{Efficient Hiring Process:} The platform simplifies the process of finding
+        and hiring freelancers by providing a centralized system for project posting and
+        proposal submission.
+  \item \textbf{Improved Communication:} TalentLink enables clear and organized
+        communication between freelancers and clients, reducing misunderstandings during
+        project collaboration.
+  \item \textbf{Better Project Management:} The system provides structured workflows for
+        managing projects, making it easier to track progress and monitor activities.
+  \item \textbf{Transparency and Trust:} The platform allows clients to review freelancer
+        profiles and feedback, helping build trust and transparency in freelance
+        collaborations.
+  \item \textbf{Access to Genuine Opportunities:} Freelancers can easily discover relevant
+        project opportunities that match their skills and expertise.
+  \item \textbf{Centralized Platform:} All freelance activities such as project posting,
+        proposal management, and communication are handled within a single platform,
+        improving efficiency.
+\end{itemize}
+
+%============================================================
+%  CHAPTER 4 – SYSTEM REQUIREMENTS
+%============================================================
+\chapter{SYSTEM REQUIREMENTS}
+
+\section{HARDWARE REQUIREMENTS}
+
+Hardware requirements specify the basic physical components required to develop and run
+the TalentLink platform. Since the project is a web-based application, it does not require
+any specialized hardware components. The following hardware components are sufficient for
+the development and execution of the system:
+
+\begin{table}[H]
+  \centering
+  \caption{Hardware Requirements}
+  \begin{tabularx}{0.85\textwidth}{|>{\bfseries}l|X|}
+    \hline
+    \textbf{Component}       & \textbf{Specification} \\
+    \hline
+    Processor                & Intel Core i3 or above \\
+    \hline
+    RAM                      & Minimum 4 GB (8 GB recommended) \\
+    \hline
+    Storage                  & Minimum 10 GB free disk space \\
+    \hline
+    System Type              & 64-bit Computer \\
+    \hline
+    Internet Connection      & Required for development, testing, and deployment \\
+    \hline
+  \end{tabularx}
+  \label{tab:hardware}
+\end{table}
+
+\section{SOFTWARE REQUIREMENTS}
+
+Software requirements define the tools and technologies used to develop the TalentLink
+platform.
+
+\begin{table}[H]
+  \centering
+  \caption{Software Requirements}
+  \begin{tabularx}{0.85\textwidth}{|>{\bfseries}l|X|}
+    \hline
+    \textbf{Category}        & \textbf{Tool / Technology} \\
+    \hline
+    Operating System         & Windows / Linux / macOS \\
+    \hline
+    Programming Languages    & Python, JavaScript \\
+    \hline
+    Frontend Framework       & React \\
+    \hline
+    Backend Framework        & Django, Django REST Framework \\
+    \hline
+    Database                 & SQLite (Development), PostgreSQL (Production) \\
+    \hline
+    API Tools                & Postman, Swagger \\
+    \hline
+    IDE                      & Visual Studio Code \\
+    \hline
+    Version Control          & Git, GitHub \\
+    \hline
+    Web Browser              & Google Chrome \\
+    \hline
+  \end{tabularx}
+  \label{tab:software}
+\end{table}
+
+%============================================================
+%  CHAPTER 5 – PROJECT DESCRIPTION
+%============================================================
+\chapter{PROJECT DESCRIPTION}
+
+The TalentLink platform is designed to provide a professional environment where
+freelancers and clients can collaborate efficiently for project-based work. The system
+focuses on simplifying the process of discovering freelance opportunities, submitting
+proposals, and managing projects through a structured workflow.
+
+\indent The platform consists of two primary user roles: Clients and Freelancers. Clients
+are users who post project requirements, while freelancers are professionals who search
+for projects and submit proposals based on their skills and experience. The system enables
+smooth interaction between these two roles through organized communication and project
+management features.
+
+\indent When a client registers on the platform, they can create and publish project
+listings that include details such as project description, required skills, deadlines, and
+budget. Freelancers can browse available projects and submit proposals that describe how
+they can complete the project. Clients can review these proposals and select the most
+suitable freelancer for their project.
+
+\indent Once a freelancer is selected, the platform allows both users to communicate and
+collaborate throughout the project lifecycle. The system supports project tracking,
+enabling both freelancers and clients to monitor the progress of the project. This
+structured workflow helps ensure transparency and reduces misunderstandings between users.
+
+\indent TalentLink also provides profile management features that allow freelancers to
+showcase their skills, experience, and previous work. This helps clients evaluate
+freelancers effectively before assigning projects. Similarly, clients can manage their
+projects, review proposals, and track project activities through the platform.
+
+\section{SETTING UP THE TALENTLINK APPLICATION}
+
+\subsection{Step 1: User Registration}
+
+Users first register on the TalentLink platform by providing basic details such as name,
+email, and password. The system verifies the user using an OTP-based authentication
+process to ensure secure access.
+
+\begin{figure}[H]
+  \centering
+  % \includegraphics[width=0.75\textwidth]{signup.png}
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.1: TalentLink Sign Up Screenshot]\vspace{2cm}}}
+  \caption{TalentLink Sign Up}
+  \label{fig:signup}
+\end{figure}
+
+\subsection{Step 2: User Login}
+
+After successful registration, users can log in to the system using their credentials.
+Based on their role, they are directed to either the freelancer dashboard or the client
+dashboard.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.2: Client Dashboard Screenshot]\vspace{2cm}}}
+  \caption{TalentLink Client Dashboard}
+  \label{fig:client_dash}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.3: Freelancer Dashboard Screenshot]\vspace{2cm}}}
+  \caption{TalentLink Freelancer Dashboard}
+  \label{fig:freelancer_dash}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.4: Login Screen Screenshot]\vspace{2cm}}}
+  \caption{TalentLink Login}
+  \label{fig:login}
+\end{figure}
+
+\subsection{Step 3: Profile Creation}
+
+Freelancers can create a detailed profile that lists their skills, experience, and
+previous work so clients can evaluate them effectively.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.5: Profile Creation Screenshot]\vspace{2cm}}}
+  \caption{Profile Creation}
+  \label{fig:profile}
+\end{figure}
+
+\subsection{Step 4: Project Posting}
+
+Clients can create and publish project listings with details such as project description,
+required skills, and deadlines.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.6: Post Project Screenshot]\vspace{2cm}}}
+  \caption{Post Project -- Client View}
+  \label{fig:post_project1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.7: Post Project Form Screenshot]\vspace{2cm}}}
+  \caption{Post Project -- Project Form}
+  \label{fig:post_project2}
+\end{figure}
+
+\subsection{Step 5: Proposal Submission}
+
+Freelancers can browse available projects and submit proposals explaining how they plan
+to complete the project.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.8: Proposal Submission Screenshot]\vspace{2cm}}}
+  \caption{Proposal Submission}
+  \label{fig:proposal}
+\end{figure}
+
+\subsection{Step 6: Project Selection}
+
+Clients review proposals submitted by freelancers and select the most suitable candidate
+for their project.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.9: Project Selection Screenshot]\vspace{2cm}}}
+  \caption{Project Selection}
+  \label{fig:selection}
+\end{figure}
+
+\subsection{Step 7: Communication and Collaboration}
+
+Once a freelancer is selected, both parties can communicate through the platform and work
+on the project collaboratively.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.75\textwidth}{\centering\vspace{2cm}[Fig 5.10: Messaging Interface Screenshot]\vspace{2cm}}}
+  \caption{Messaging and Collaboration}
+  \label{fig:messaging}
+\end{figure}
+
+\subsection{Step 8: Project Completion and Review}
+
+After completing the project, clients can provide feedback and ratings to freelancers,
+helping maintain transparency and trust in the platform.
+
+%============================================================
+%  CHAPTER 6 – SYSTEM DESIGN
+%============================================================
+\chapter{SYSTEM DESIGN}
+
+\section{SYSTEM ARCHITECTURE}
+
+The system architecture of TalentLink follows a structured web application architecture
+that enables communication between users, the application interface, and the database.
+The platform is designed to provide a reliable environment where freelancers and clients
+can interact, manage projects, and collaborate efficiently.
+
+\indent The architecture consists of three main components: the frontend layer, the
+backend layer, and the database layer. The frontend layer provides the user interface
+through which clients and freelancers interact with the system. It allows users to
+register, log in, browse projects, submit proposals, and manage project activities.
+
+\indent The database layer is responsible for storing and managing all system data,
+including user information, project details, proposals, contracts, and reviews. The
+database ensures that information is stored securely and can be retrieved whenever
+required.
+
+\indent When a user performs an action on the platform, the request is sent from the
+frontend to the backend through application interfaces. The backend processes the
+request, interacts with the database to store or retrieve data, and then sends the
+response back to the frontend. This structured architecture helps maintain system
+efficiency, scalability, and organized management of freelance project activities.
+
+\section{USER FLOW DESIGN}
+
+A Data Flow Diagram (DFD) is a graphical representation of the flow of data within a
+system or process. It is a modelling technique that shows how data moves through
+processes and how it is stored, transformed, or exchanged within a system. DFDs are often
+used in system analysis and design to visualize and understand the data processing and
+flow of information in a structured manner.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 6.1: User Flow Diagram]\vspace{3cm}}}
+  \caption{User Flow Diagram for TalentLink}
+  \label{fig:userflow}
+\end{figure}
+
+\section{UML DIAGRAMS}
+
+Unified Modelling Language (UML) is a standardized modelling language in the field of
+software engineering. It provides a way to visualize a system's design through a set of
+diagrams. UML diagrams help software developers and system architects communicate and
+understand the structure and behaviour of a system. In UML, the diagrams can be broadly
+categorized into two main types: structural diagrams and behavioural diagrams.
+
+\subsection{Structural Diagrams}
+
+Structural diagrams in UML focus on representing the static structure of a system. They
+showcase the components that make up the system and their relationships. The following
+are different structural diagrams:
+
+\begin{itemize}[leftmargin=2em]
+  \item Class Diagram
+  \item Object Diagram
+  \item Component Diagram
+  \item Deployment Diagram
+\end{itemize}
+
+\subsection{Behavioural Diagrams}
+
+Behavioural diagrams primarily capture the dynamic facet of the system. UML has the
+following 5 varieties of behavioural diagrams:
+
+\begin{itemize}[leftmargin=2em]
+  \item Use Case Diagram
+  \item Sequence Diagram
+  \item Collaboration Diagram
+  \item State Chart Diagram
+  \item Activity Diagram
+\end{itemize}
+
+\subsubsection{6.3.1 Use Case Diagram}
+
+Use Case Diagrams in UML describe interactions between a system and external entities
+known as actors. Use cases represent specific functionalities or scenarios that the
+system provides to its users.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 6.3.1: Use Case Diagram]\vspace{3cm}}}
+  \caption{Use Case Diagram}
+  \label{fig:usecase}
+\end{figure}
+
+\subsubsection{6.3.2 Class Diagram}
+
+The Class Diagram in UML illustrates the static structure of a system, detailing classes,
+attributes, methods, and their relationships. Rectangles represent classes, and lines
+indicate associations, dependencies, and inheritances.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 6.3.2: Class Diagram]\vspace{3cm}}}
+  \caption{Class Diagram}
+  \label{fig:class}
+\end{figure}
+
+\subsubsection{6.3.3 Activity Diagram}
+
+Activity Diagrams represent the flow of activities within a process or workflow. They
+focus on actions, decisions, and control flows, providing a high-level view of the
+dynamic aspects of a system.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 6.3.3: Activity Diagram]\vspace{3cm}}}
+  \caption{Activity Diagram}
+  \label{fig:activity}
+\end{figure}
+
+\subsubsection{6.3.4 Sequence Diagram}
+
+A sequence diagram depicts interaction between objects in a serial order, i.e., the
+order during which these interactions occur. Sequence diagrams are widely employed by
+business analysts and software developers to document and understand requirements for new
+and existing systems.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 6.3.4: Sequence Diagram]\vspace{3cm}}}
+  \caption{Sequence Diagram}
+  \label{fig:sequence}
+\end{figure}
+
+%============================================================
+%  CHAPTER 7 – IMPLEMENTATION
+%============================================================
+\chapter{IMPLEMENTATION}
+
+The TalentLink platform was implemented as a full-stack web application designed to
+connect freelancers and clients through a structured and user-friendly interface. The
+system allows users to register and authenticate securely, after which they are assigned
+roles as either freelancers or clients. Clients can post projects by providing details
+such as title, description, budget, and required skills. Freelancers can browse available
+projects and submit proposals based on their expertise. The platform also enables clients
+to review proposals and select suitable freelancers for their projects, ensuring an
+organized hiring process.
+
+\indent The backend of the system manages user authentication, project management,
+proposal handling, messaging, and contract tracking. All requests from the frontend are
+processed through secure APIs and stored in the database for efficient retrieval and
+management. The system also supports communication between freelancers and clients and
+allows users to track project progress from proposal submission to completion. This
+structured implementation ensures transparency, efficient collaboration, and a smooth
+workflow for freelance project management.
+
+\section{INSTALLATIONS AND LIBRARIES USED}
+
+\subsection{Installation Steps}
+
+\begin{enumerate}[leftmargin=2em]
+  \item Install Python and create a virtual environment.
+  \item Install backend dependencies using \texttt{pip} from the requirements file.
+  \item Install Node.js and npm for the frontend development environment.
+  \item Install frontend dependencies using \texttt{npm install}.
+  \item Configure the database connection for SQLite (development) or PostgreSQL
+        (production).
+  \item Run database migrations and start the backend server.
+  \item Start the frontend development server to launch the application.
+\end{enumerate}
+
+\section{CODE}
+
+The following is the main routing file (\texttt{App.js}) of the React frontend, which
+defines all application routes for both the Client and Freelancer portals.
+
+\begin{verbatim}
+import React from "react";
+import "./App.css";
+import "./assets/global.css";
+import { BrowserRouter as Router, Routes, Route, Navigate }
+  from "react-router-dom";
+
+/* ===== Context Providers ===== */
+import { UserProvider } from "./context/UserContext";
+import { ProjectProvider } from "./context/ProjectContext";
+import { ThemeProvider } from "./context/ThemeContext";
+import { SearchProvider } from "./context/SearchContext";
+
+/* ===== AuthFlow UI Pages ===== */
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
+import VerifyOtp from "./pages/VerifyOtp";
+import ForgotPassword from "./pages/ForgotPassword";
+import ResetPassword from "./pages/ResetPassword";
+
+/* ===== Client Dashboard Pages & Layout ===== */
+import ClientLayout from "./freelancer_layouts/ClientLayout";
+import ClientDashboard from "./freelancer_pages/client/ClientDashboard";
+import ClientProjects from "./freelancer_pages/client/ClientProjects";
+
+/* ===== Freelancer Dashboard Pages ===== */
+import FreelancerDashboard
+  from "./freelancer_pages/freelancer/FreelancerDashboard";
+import Projects from "./freelancer_pages/freelancer/Projects";
+import FreelancerLayout
+  from "./freelancer_layouts/FreelancerLayout";
+
+function App() {
+  return (
+    <ThemeProvider>
+      <UserProvider>
+        <ProjectProvider>
+          <SearchProvider>
+            <Router>
+              <Routes>
+                {/* PUBLIC ROUTES */}
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
+                <Route path="/verify-otp" element={<VerifyOtp />} />
+
+                {/* CLIENT ROUTES */}
+                <Route path="/client" element={<ClientLayout />}>
+                  <Route index element={<ClientDashboard />} />
+                  <Route path="projects" element={<ClientProjects />} />
+                </Route>
+
+                {/* FREELANCER ROUTES */}
+                <Route path="/freelancer" element={<FreelancerLayout />}>
+                  <Route index element={<FreelancerDashboard />} />
+                  <Route path="projects" element={<Projects />} />
+                </Route>
+              </Routes>
+            </Router>
+          </SearchProvider>
+        </ProjectProvider>
+      </UserProvider>
+    </ThemeProvider>
+  );
+}
+
+export default App;
+\end{verbatim}
+
+%============================================================
+%  CHAPTER 8 – RESULTS
+%============================================================
+\chapter{RESULTS}
+
+This section describes step-by-step the system analysis and the results obtained. The
+TalentLink platform was tested to verify the correct functioning of each module including
+user authentication, project posting, proposal submission, messaging, and project
+tracking. All functional modules were verified and found to be working as expected.
+
+\indent The system provides a seamless user experience across both the Client and
+Freelancer dashboards. Users can register, log in securely with OTP verification, post
+projects, submit and review proposals, communicate through messaging, and track project
+progress. The interface is responsive and intuitive, supporting smooth navigation across
+all platform features.
+
+\indent The backend APIs were tested using Postman, and all endpoints responded correctly
+with appropriate status codes and data formats. The database correctly stored and
+retrieved all information including user data, project details, proposals, and review
+records.
+
+\begin{figure}[H]
+  \centering
+  \fbox{\parbox{0.85\textwidth}{\centering\vspace{3cm}[Fig 8.1: System Output Screenshot]\vspace{3cm}}}
+  \caption{System Output -- TalentLink Platform}
+  \label{fig:output}
+\end{figure}
+
+%============================================================
+%  CHAPTER 9 – FUTURE SCOPE
+%============================================================
+\chapter{FUTURE SCOPE}
+
+While the TalentLink platform successfully provides a structured environment for
+connecting freelancers and clients, there are several opportunities for further
+improvements and enhancements. As the demand for digital freelance platforms continues to
+grow, the system can be expanded with additional features to improve efficiency, user
+experience, and scalability.
+
+\indent The future scope of the TalentLink platform includes the following enhancements:
+
+\begin{itemize}[leftmargin=2em]
+  \item \textbf{AI-Based Project Matching:} Implement intelligent algorithms that
+        automatically match freelancers with suitable projects based on skills,
+        experience, and project requirements.
+  \item \textbf{Advanced Communication Tools:} Integrate real-time chat, video
+        communication, and file sharing features to improve collaboration between
+        freelancers and clients.
+  \item \textbf{Secure Payment Integration:} Add secure online payment systems to manage
+        project payments, milestones, and financial transactions within the platform.
+  \item \textbf{Mobile Application Development:} Develop a mobile version of the
+        TalentLink platform to allow users to access freelance opportunities and manage
+        projects from anywhere.
+  \item \textbf{Enhanced Rating and Review System:} Improve the feedback system to help
+        clients evaluate freelancers more effectively and maintain trust within the
+        platform.
+  \item \textbf{Blockchain-Based Contracts:} Introduce smart contracts using blockchain
+        technology to ensure secure, tamper-proof agreements between freelancers and
+        clients.
+  \item \textbf{Multi-language Support:} Add support for multiple languages to make the
+        platform accessible to a wider global audience.
+\end{itemize}
+
+%============================================================
+%  CHAPTER 10 – CONCLUSION
+%============================================================
+\chapter{CONCLUSION}
+
+The TalentLink platform provides a structured and efficient solution for connecting
+freelancers and clients in a professional environment. With the increasing demand for
+remote work and freelance services, there is a need for reliable platforms that simplify
+the process of hiring skilled professionals and managing project collaborations.
+TalentLink addresses these needs by providing a centralized system where clients can post
+project requirements and freelancers can discover and apply for suitable opportunities.
+
+\indent The system improves collaboration by enabling organized communication, proposal
+submission, and project tracking throughout the project lifecycle. By offering a
+structured workflow, TalentLink helps reduce communication gaps and improves transparency
+between freelancers and clients. The platform also allows freelancers to showcase their
+skills and experience, helping clients identify suitable professionals for their projects
+more efficiently.
+
+\indent Overall, TalentLink contributes to improving the freelance hiring process by
+providing a reliable and organized platform for project collaboration. The system enhances
+efficiency, transparency, and communication in freelance project management. In the
+future, the platform can be further enhanced with advanced features such as intelligent
+project matching, improved collaboration tools, and scalability to support a larger number
+of users in the growing digital economy.
+
+%============================================================
+%  REFERENCES / BIBLIOGRAPHY
+%============================================================
+\newpage
+\begin{center}
+  {\fontsize{16}{20}\selectfont\bfseries REFERENCES}
+\end{center}
+\addcontentsline{toc}{chapter}{References}
+\vspace{2\baselineskip}
+
+\begin{enumerate}[leftmargin=2em, label={[\arabic*]}]
+
+  \item Lily Puspa Dewi, Michael Wong, and Henry Novianus Palit,
+        \textit{``The Freelancer Application: A Gateway to Job-Seeking Opportunities for
+        Students,''} International Journal of Advanced Computer Science and Applications,
+        2022.
+
+  \item Geoffrey G. Parker, Marshall Van Alstyne, and Vili Lehdonvirta,
+        \textit{``Design of Online Service Marketplace Platforms,''} Journal of
+        Management Information Systems, 2021.
+
+  \item Vili Lehdonvirta, John Horton, and Arun Sundararajan,
+        \textit{``Digital Freelance Marketplaces and Remote Work Platforms,''} Oxford
+        Internet Institute, University of Oxford, 2020.
+
+  \item Django Software Foundation, \textit{Django Documentation},
+        \url{https://docs.djangoproject.com}, 2024.
+
+  \item React Documentation, \textit{React -- A JavaScript Library for Building User
+        Interfaces}, \url{https://reactjs.org/docs/getting-started.html}, 2024.
+
+  \item PostgreSQL Global Development Group, \textit{PostgreSQL Documentation},
+        \url{https://www.postgresql.org/docs/}, 2024.
+
+  \item GitHub Documentation, \textit{Git and GitHub Version Control},
+        \url{https://docs.github.com}, 2024.
+
+  \item Postman Inc., \textit{Postman API Testing Documentation},
+        \url{https://learning.postman.com/docs/}, 2024.
+
+\end{enumerate}
+
+%============================================================
+%  APPENDIX
+%============================================================
+\appendix
+\chapter{APPENDIX}
+\addcontentsline{toc}{chapter}{Appendix}
+
+\section{TECHNOLOGY STACK SUMMARY}
+
+\begin{table}[H]
+  \centering
+  \caption{Complete Technology Stack}
+  \begin{tabularx}{0.85\textwidth}{|l|X|}
+    \hline
+    \textbf{Layer}       & \textbf{Technology Used}     \\
+    \hline
+    Frontend             & React.js, HTML5, CSS3        \\
+    \hline
+    Backend              & Django, Django REST Framework \\
+    \hline
+    Database             & SQLite / PostgreSQL           \\
+    \hline
+    Authentication       & OTP-based, JWT Tokens         \\
+    \hline
+    API Testing          & Postman, Swagger              \\
+    \hline
+    Version Control      & Git, GitHub                  \\
+    \hline
+    Deployment           & Local / Cloud                \\
+    \hline
+  \end{tabularx}
+  \label{tab:techstack}
+\end{table}
+
+\section{PROJECT TEAM}
+
+\begin{table}[H]
+  \centering
+  \caption{Project Team Details}
+  \begin{tabularx}{0.85\textwidth}{|l|l|X|}
+    \hline
+    \textbf{S.No} & \textbf{Roll No.} & \textbf{Name} \\
+    \hline
+    1 & 23271A05D9 & ADI ROSHINI \\
+    \hline
+    2 & 23271A05C8 & VATARIKARI MANISHA \\
+    \hline
+    3 & 23271A05B9 & ARMOOR AKHILA \\
+    \hline
+    4 & 23271A05G3 & ARANDKAR VAESHNAVI \\
+    \hline
+  \end{tabularx}
+  \label{tab:team}
+\end{table}
+
+%============================================================
+\end{document}
+%============================================================

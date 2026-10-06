@@ -1,0 +1,237 @@
+JYOTHISHMATHI INSTITUTE OF TECHNOLOGY & SCIENCE  
+(NACC ‘A’ Grade, NBA Accredited, Autonomous College, Approved by AICTE 
+& Affiliated to JNTUH, Hyderabad) 
+Department of Computer Science and Engineering 
+ 
+ 
+PREPARATION OF THE MINI-PROJECT REPORT    
+ 
+Font:  
+Times New Roman (TNR) 
+1.  Chapter Names  
+ 
+- 
+16 TNR (bold) all caps 
+ 
+ 
+2.   Main Headings  
+ 
+- 
+14 TNR (bold) all caps 
+  
+ 
+3.   Subheadings 
+ 
+- 
+14 TNR (bold) Title case 
+ 
+ 
+4.   Sub – sub headings 
+- 
+12 TNR (bold) Title case 
+ 
+ 
+5.   Body of Project 
+ 
+- 
+12 TNR 
+ 
+ 
+6.   Text in Diagrams  
+- 
+12 TNR (all lower case) 
+ 
+ 
+7.   Diagrams/Table headings/ 
+      Fig. Headings   
+ 
+-  
+10 TNR Title case (Italic) 
+ 
+ 
+Spacing: 
+1.   2 line spacing between chapter names and body text. 
+ 
+ 
+2.   1.5 line spacing in body text. 
+ 
+ 
+3.   New paragraphs start with single tab. 
+ 
+ 
+   
+Margins : 
+Left  1.5 inch (3.82 cm)  
+ 
+Right    1.0 inch (2.54 cm) 
+ 
+ 
+Top  1.0 inch (2.54 cm) 
+ 
+Bottom 1.0 inch (2.54 cm) 
+ 
+Pages : 
+Size 
+: 
+A4 paper 
+ 
+Color : 
+White   
+ 
+Page numbers: 
+1.  Chapter pages: 
+position :   
+Bottom, Middle 
+Symbols:  
+Decimal numbers (1, 2, 3…) 
+2.  Front Pages: 
+position :   
+Bottom, Middle 
+Symbols: 
+Small Roman Numbers (i, ii, iii..) 
+                 (Exclude page numbers for title page, Certificate pages, Acknowledgement page) 
+ 
+ 
+ 
+ 
+No. of copies:  
+1 for Guide 
+ 
+ 
+ 
+1 for Department 
+ 
+ 
+ 
+1 for Library 
+ 
+ 
+ 
+1 for each student 
+ 
+Number of pages: 
+Between 60 to 120 pages 
+ 
+Arrangement of Chapters: The following is suggested format for arranging the Dissertation / 
+Thesis matter  into various chapters.  However this arrangement can be changed to suit the 
+particular Project work.   
+ 
+1. 
+Introduction 
+2. 
+Literature Survey 
+3. 
+System Analysis 
+4. 
+System Design 
+5. 
+System Testing and Results 
+6. 
+Conclusion and Future Enhansemets 
+7. 
+Reference / bibliography 
+8. 
+Appendices (if any) 
+ 
+ 
+Front Pages: Page 1  
+Plain blank white paper 
+ 
+ 
+Page 2  
+Blank OHP sheet 
+ 
+ 
+Page 3  
+Title Page 
+Page 4  
+Blank OHP sheet 
+ 
+     
+Page 5  
+Certificate signed by guide, HOD, External Examiner 
+ 
+ 
+Page 6  
+Blank OHP sheet 
+ 
+ 
+Page 7  
+Declaration by student 
+ 
+ 
+Page 8  
+Acknowledgement  
+ 
+ 
+Page 9  
+Abstract 
+ 
+ 
+Page 10 
+Contents/Index 
+ 
+ 
+Page 11 
+List of Figures 
+Page 12 
+List of tables 
+Page 13 
+List of screens 
+ 
+ 
+Page 14 
+Abbreviations 
+ 
+Chapter pages:   Every chapter includes  
+     First Line    Contains chapter number as fallows 
+                    Chapter–X (Position: Top-Middle, Font: TNR, Size: 16  
+Bold, Sentence Case, Where X is chapter number) 
+ Second Line    Chapter name (Position: Top-middle,  Font: TNR, Size:16  
+       Bold, All caps, Where X is chapter number)  
+ 
+ 
+ 
+ 
+   Follows 2 line space, then contents in the chapter. 
+ 
+The arrangement of paragraph in a Chapter: 
+ 
+Each main topic Title in a chapter should be properly numbered for example in 
+chapter 2, it should be: 2.1, 2.2. etc., (Font: 14, TNR, Bold and Upper case) where, the first 
+digit represents the Chapter number, and second digit, the topic Title number in serial order. 
+Sub-topic titles, if any, may be indicated as 1.1.1, 1.1.2, etc. (Font: 14, TNR, Bold and 
+title case) i.e. the first digit representing the chapter, the second representing the topic title 
+and the third representing the sub-topic title. 
+Photographs and Tables: 
+ 
+The photographs and tables occurring in a chapter may be serially numbered as Fig: 
+1.1, 1.2 etc., where the first digit represents the chapter, the second digit represents figure 
+number. 
+The photograph may be represented as: Screen 1.1, 1.2 etc., the first digit representing 
+chapter and the second representing the photograph number. 
+ 
+Bibliography  or References: 
+The following format may be used for the Bibliography / References: 
+For Book 
+ 
+Sl. No  
+Author (s)  
+Book   
+Publisher  
+Year     Pages (PP) 
+For Journal / Proceedings 
+ 
+ 
+Use MLA format 
+ 
+Documentation :  Spiral Binding. 
+ 
+ 
+Important Note:   
+ 
+1. Every diagram, figure, table and screen shot should be explained and it should be 
+referred in the documentation. 
+2. Every chapter should contain information related to the base paper and your project 
+work. It should not be in general. 
+ 

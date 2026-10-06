@@ -1,0 +1,112 @@
+/* Overlay/Backdrop */
+.notif-sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9998; /* High z-index to sit on top of everything */
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+/* Sidebar Container */
+.notif-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 380px;
+  height: 100vh;
+  background: #fff;
+  z-index: 9999; /* Higher than overlay */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  animation: slideIn 0.3s ease-in-out;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from { right: -400px; }
+  to { right: 0; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Header */
+.notif-sidebar-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.notif-sidebar-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #64748b;
+  cursor: pointer;
+  line-height: 1;
+}
+
+/* Content Area */
+.notif-sidebar-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  background: #f8fafc;
+}
+
+.loading-text, .empty-text {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Footer */
+.notif-sidebar-footer {
+  padding: 16px;
+  border-top: 1px solid #eee;
+  background: #fff;
+  text-align: center;
+}
+
+.view-all-btn {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+}
+.view-all-btn:hover {
+  text-decoration: underline;
+}
+
+/* --- Responsive Fixes for Sidebar --- */
+
+/* Force items to fit within the sidebar width */
+.notif-sidebar .notif-row {
+  margin-bottom: 8px;
+  padding: 10px;
+}
+
+/* Reduce message width so it truncates properly in sidebar */
+.notif-sidebar .notif-message {
+  max-width: 220px; 
+}
