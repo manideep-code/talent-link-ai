@@ -1,72 +1,79 @@
-# TalentLink Codespaces startup
+# TalentLink – Professional Freelance Matchmaking Platform
 
-This setup is designed so the repository can be opened from another computer and the whole TalentLink stack can be started with one command.
+## 📌 Overview
+TalentLink is a full-stack web application designed to connect freelancers and clients in a structured and efficient environment. The platform enables clients to post projects and freelancers to discover opportunities, submit proposals, and collaborate through a secure system. It simplifies freelance project management by integrating communication, contract handling, and tracking features into a single platform.
 
-## One-time setup
+---
 
-Put these files into the repository:
+## 🚀 Features
 
-```text
-talent-link-ai/
-├── start-talentlink.sh
-└── .devcontainer/
-    └── devcontainer.json
-```
+### 👤 For Clients
+- Register and login securely
+- Create, edit, and manage projects
+- View freelancer profiles
+- Review and manage proposals
+- Create and manage contracts
+- Communicate with freelancers
+- Track project progress
+- Provide ratings and reviews
 
-Then commit and push them.
+### 💼 For Freelancers
+- Register and login securely
+- Create and manage profiles (skills, portfolio)
+- Browse available projects
+- Submit proposals
+- Track proposal status
+- Communicate with clients
+- Work on assigned contracts
+- Receive ratings and reviews
 
-In the Codespace, rebuild once:
+### 🌐 General Features
+- Role-based authentication (Client/Freelancer)
+- Secure API communication using JWT
+- Dashboard for tracking activities
+- Real-time messaging system
+- Review and rating system
+- Scalable and modular architecture
 
-```bash
-Ctrl+Shift+P
-Dev Containers: Rebuild Container
-```
+---
 
-## Normal startup
+## 🛠️ Technologies Used
 
-From the repository root:
+### Frontend
+- React (JSX)
+- HTML5
+- CSS3
+- JavaScript
+- Tailwind CSS
 
-```bash
-bash start-talentlink.sh
-```
+### Backend
+- Django
+- Django REST Framework
+- Python
 
-The script starts:
+### Database
+- PostgreSQL (Production)
+- SQLite (Development)
 
-```text
-Django  →  0.0.0.0:8000
-React   →  0.0.0.0:3000
-```
+### Tools & Utilities
+- Git & GitHub
+- Swagger UI (API documentation)
+- Postman (API testing)
+- VS Code / PyCharm
 
-The devcontainer configuration automatically forwards both ports and is configured so port 3000 opens the application in a browser when it is first auto-forwarded.
+### Authentication
+- JWT (JSON Web Tokens)
 
-## Important portability fix
+---
 
-The existing project used a browser API base pointing at `127.0.0.1:8000`. That works only when the browser can reach the local forwarded backend exactly that way.
+## 🏗️ System Architecture
+The application follows a client-server architecture:
 
-The startup script makes the existing CRA client Codespaces-safe by:
+- Frontend (React): Handles UI and user interaction
+- Backend (Django REST API): Handles business logic and APIs
+- Database (PostgreSQL): Stores users, projects, proposals, contracts, and messages
 
-1. changing known hard-coded `127.0.0.1:8000/api/` or `localhost:8000/api/` references in `axiosInstance.js` to `/api/`
-2. adding the CRA development proxy:
-   `http://127.0.0.1:8000`
+All communication between frontend and backend is done using REST APIs secured with JWT authentication.
 
-The browser therefore calls:
+---
 
-```text
-https://<codespace>-3000.<forwarding-domain>/api/...
-```
-
-and React forwards `/api/...` internally to Django.
-
-This avoids hard-coding a Codespace-specific hostname and avoids browser-side localhost problems.
-
-A backup is created as:
-
-```text
-client/src/utils/axiosInstance.js.bak
-```
-
-when the script changes that file.
-
-## OTP during development
-
-The project currently uses Django's console email backend. OTP output therefore appears in the Django/backend terminal when registration succeeds. It is not sent to Gmail until a real SMTP/email provider is configured.
