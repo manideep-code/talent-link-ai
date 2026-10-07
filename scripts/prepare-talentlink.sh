@@ -16,7 +16,7 @@ fi
 echo "[TalentLink] Installing/checking backend dependencies..."
 "$VENV/bin/python" -m pip install -q -r "$SERVER/requirements.txt"
 
-if [ ! -d "$CLIENT/node_modules" ]; then
+if [ ! -x "$CLIENT/node_modules/.bin/react-scripts" ]; then
   echo "[TalentLink] Installing frontend dependencies..."
   (cd "$CLIENT" && npm install)
 fi
