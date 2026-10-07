@@ -5,12 +5,13 @@
     "3000": {
       "label": "TalentLink",
       "protocol": "http",
-      "onAutoForward": "openBrowserOnce"
+      "onAutoForward": "openPreview"
     },
     "8000": {
       "label": "TalentLink API",
       "protocol": "http",
       "onAutoForward": "silent"
     }
-  }
+  },
+  "postStartCommand": "bash scripts/prepare-talentlink.sh"
 }
