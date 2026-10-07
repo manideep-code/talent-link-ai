@@ -1,0 +1,16 @@
+{
+  "name": "TalentLink",
+  "forwardPorts": [3000, 8000],
+  "portsAttributes": {
+    "3000": {
+      "label": "TalentLink",
+      "protocol": "http",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "8000": {
+      "label": "TalentLink API",
+      "protocol": "http",
+      "onAutoForward": "silent"
+    }
+  }
+}
