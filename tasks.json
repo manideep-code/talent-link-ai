@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "TalentLink: Backend",
+      "type": "shell",
+      "command": "bash \"${workspaceFolder}/scripts/start-backend.sh\"",
+      "isBackground": true,
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1,
+        "instancePolicy": "silent"
+      },
+      "presentation": {
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false
+      }
+    },
+    {
+      "label": "TalentLink: Frontend",
+      "type": "shell",
+      "command": "bash \"${workspaceFolder}/scripts/start-frontend.sh\"",
+      "isBackground": true,
+      "problemMatcher": [],
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1,
+        "instancePolicy": "silent"
+      },
+      "presentation": {
+        "reveal": "never",
+        "focus": false,
+        "panel": "dedicated",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
