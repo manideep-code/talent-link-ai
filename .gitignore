@@ -35,3 +35,6 @@ Thumbs.db
 
 # Logs
 *.log
+
+server/venv/
+client/node_modules/
