@@ -10,6 +10,7 @@ echo
 
 bash "$ROOT/scripts/prepare-talentlink.sh"
 
+
 set_backend_public() {
   echo
   echo "[TalentLink] Waiting for backend port 8000..."
@@ -23,20 +24,56 @@ set_backend_public() {
     sleep 1
   done
 
-  if command -v gh >/dev/null 2>&1; then
-    echo "[TalentLink] Setting API port 8000 to public..."
-
-    if gh codespace ports visibility 8000:public; then
-      echo "[TalentLink] API port 8000 is public."
-    else
-      echo "[TalentLink] Warning: could not automatically set port 8000 to public."
-    fi
-  else
-    echo "[TalentLink] Warning: GitHub CLI (gh) is not available."
+  if ! (echo >/dev/tcp/127.0.0.1/8000) >/dev/null 2>&1; then
+    echo "[TalentLink] ERROR: Backend did not start on port 8000."
+    return 1
   fi
 
-  echo
+  if ! command -v gh >/dev/null 2>&1; then
+    echo "[TalentLink] ERROR: GitHub CLI (gh) is not available."
+    return 1
+  fi
+
+  if [ -z "${CODESPACE_NAME:-}" ]; then
+    echo "[TalentLink] ERROR: CODESPACE_NAME is not available."
+    return 1
+  fi
+
+  echo "[TalentLink] Setting API port 8000 to public..."
+  echo "[TalentLink] Codespace: $CODESPACE_NAME"
+
+  # Explicitly target THIS Codespace.
+  gh codespace ports visibility \
+    8000:public \
+    --codespace "$CODESPACE_NAME"
+
+  echo "[TalentLink] Verifying port 8000 visibility..."
+
+  for i in {1..10}; do
+    VISIBILITY="$(
+      gh codespace ports \
+        --codespace "$CODESPACE_NAME" \
+        --json sourcePort,visibility \
+        --jq '.[] | select(.sourcePort == 8000) | .visibility' \
+        2>/dev/null || true
+    )"
+
+    if [ "$VISIBILITY" = "public" ]; then
+      echo "[TalentLink] API port 8000 is PUBLIC."
+      echo
+      return 0
+    fi
+
+    sleep 1
+  done
+
+  echo "[TalentLink] ERROR: Port 8000 could not be confirmed as public."
+  echo "[TalentLink] Current port information:"
+  gh codespace ports --codespace "$CODESPACE_NAME" || true
+
+  return 1
 }
+
 
 if command -v tmux >/dev/null 2>&1; then
   SESSION="talentlink"
@@ -63,11 +100,11 @@ if command -v tmux >/dev/null 2>&1; then
   echo "The backend pane remains visible so OTP output is not hidden."
   echo
 
-  # Give the backend a moment to start, then make port 8000 public.
   set_backend_public
 
   exec tmux attach-session -t "$SESSION"
 fi
+
 
 echo "tmux is not installed."
 echo "Starting both services with live output in this terminal."
