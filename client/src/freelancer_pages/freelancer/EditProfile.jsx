@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import profileService from '../../services/profileService';
 import { Upload, X, Loader } from 'lucide-react';
+import { resolveProfileImage } from "../../utils/profileImage";
  
 
 const EditProfile = () => {
@@ -33,7 +34,7 @@ const EditProfile = () => {
                 });
 
                 if (data.profile_image) {
-                    setPreviewImage(data.profile_image.startsWith('http') ? data.profile_image : `${process.env.REACT_APP_API_BASE_URL || 'http://127.0.0.1:8000'}${data.profile_image}`);
+                    setPreviewImage(resolveProfileImage(data.profile_image));
                 }
 
             } catch (err) {

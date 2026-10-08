@@ -236,14 +236,22 @@ CORS_ALLOWED_ORIGINS = [
     "http://192.168.178.38:3000",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "http://localhost:5173", # Default Vite React port
-    "http://localhost:3001", # Fallback CRA port
+    "http://localhost:5173",
+    "http://localhost:3001",
+]
+
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*-3000\.app\.github\.dev$",
 ]
 
 CSRF_TRUSTED_ORIGINS = [
     "http://192.168.178.38:3000",
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+]
+
+CSRF_TRUSTED_ORIGIN_REGEXES = [
+    r"^https://.*-3000\.app\.github\.dev$",
 ]
 
 # Google OAuth (frontend must provide matching client ID)

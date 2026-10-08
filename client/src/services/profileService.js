@@ -1,9 +1,34 @@
 import axiosInstance from '../utils/axiosInstance';
 import axios from 'axios';
 
+const getApiBaseUrl = () => {
+  // Explicit API URL can still be supplied when needed.
+  if (process.env.REACT_APP_API_BASE_URL) {
+    return process.env.REACT_APP_API_BASE_URL;
+  }
+
+  // GitHub Codespaces:
+  // frontend: <codespace>-3000.app.github.dev
+  // backend:  <codespace>-8000.app.github.dev
+  if (
+    typeof window !== 'undefined' &&
+    window.location.hostname.endsWith('-3000.app.github.dev')
+  ) {
+    return `${window.location.protocol}//${window.location.hostname.replace(
+      '-3000.app.github.dev',
+      '-8000.app.github.dev'
+    )}`;
+  }
+
+  // Local development fallback.
+  return 'http://127.0.0.1:8000';
+};
+
+const API_BASE_URL = getApiBaseUrl();
+
 // Create a no-auth axios instance for public endpoints
 const noAuthApi = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/',
+  baseURL: `${API_BASE_URL}/api/`,
   headers: {
     'Content-Type': 'application/json',
   },
